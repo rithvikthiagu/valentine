@@ -328,31 +328,35 @@ let currentState = [...solution];
 let tiles = [];
 
 function initPuzzle() {
-  scramblePuzzle(10);
+  scramblePuzzle();
   renderPuzzle();
 }
 
-function scramblePuzzle(steps = 10) { // 8–20 is a good range
-  currentState = [...solution];       // start solved
+function scramblePuzzle() {
+  currentState = [...solution];  // start solved
   let lastEmpty = -1;
+
+  const steps = 12;  // ← slightly easier (try 12–16 range)
 
   for (let i = 0; i < steps; i++) {
     const emptyIndex = currentState.indexOf(EMPTY_PIECE);
     let moves = getValidMoves(emptyIndex);
 
-    // prevent immediate undo (moving back to the previous empty spot)
+    // Prevent immediate undo
     if (lastEmpty !== -1) {
       moves = moves.filter(m => m !== lastEmpty);
       if (moves.length === 0) moves = getValidMoves(emptyIndex);
     }
 
     const randomMove = moves[Math.floor(Math.random() * moves.length)];
+
     [currentState[emptyIndex], currentState[randomMove]] =
       [currentState[randomMove], currentState[emptyIndex]];
 
     lastEmpty = emptyIndex;
   }
 }
+
 
 
 function getValidMoves(emptyIndex) {
