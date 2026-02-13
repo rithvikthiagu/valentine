@@ -181,7 +181,15 @@ body.show-modal .container { display:flex; }
   background-repeat:no-repeat;
   background-position:center;
 }
-.puzzle-tile.empty { box-shadow:none; cursor:default; background:none !important; }
+.puzzle-tile.empty {
+  background-image: url('images/full-image.png') !important;
+  background-size: 300% 300% !important;
+  background-position: 100% 100% !important;
+  opacity: 0.25;
+  box-shadow: none;
+  cursor: default;
+}
+
 .puzzle-tile:hover:not(.empty) {
   transform:scale(1.01);
   box-shadow:0 0px 10px rgba(0,0,0,0.2);
