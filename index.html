@@ -181,15 +181,7 @@ body.show-modal .container { display:flex; }
   background-repeat:no-repeat;
   background-position:center;
 }
-.puzzle-tile.empty {
-  background-image: url('images/full-image.png') !important;
-  background-size: 300% 300% !important;
-  background-position: 100% 100% !important;
-  opacity: 0.25;
-  box-shadow: none;
-  cursor: default;
-}
-
+.puzzle-tile.empty { box-shadow:none; cursor:default; background:none !important; }
 .puzzle-tile:hover:not(.empty) {
   transform:scale(1.01);
   box-shadow:0 0px 10px rgba(0,0,0,0.2);
@@ -261,7 +253,7 @@ body.show-modal .container { display:flex; }
   <div class="modal-inner">
     <!-- PUZZLE VIEW -->
     <div id="puzzleView" class="modal-view">
-      <h1 class="modal-title">Dear Avery...</h1>
+      <h1 class="modal-title">Hi Avery!!!</h1>
 
       <div class="puzzle-container" id="puzzleContainer">
         <div class="puzzle-grid-wrap" id="puzzleGridWrap">
@@ -270,15 +262,15 @@ body.show-modal .container { display:flex; }
       </div>
 
       <div class="puzzle-reveal-text" id="puzzleRevealText">
-        <p class="complete-line">...you complete me.</p>
-        <p class="valentine-question">Will you be my Valentine?</p>
+        <p class="complete-line">i luv u.</p>
+        <p class="valentine-question">Wanna be my Valentine?</p>
         <button type="button" class="yes-only-btn" id="yesBtn">Yes</button>
       </div>
     </div>
 
     <!-- SUCCESS VIEW -->
     <div id="successView" class="modal-view">
-      <p class="modal-title">Yay, I can't wait!</p>
+      <p class="modal-title">okay lit lfg</p>
       <div class="success-gif-wrap">
         <img src="giphy.gif" alt="Celebration GIF" />
       </div>
